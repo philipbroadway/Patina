@@ -2,11 +2,8 @@ mod bible;
 mod search;
 mod utils;
 
-use bible::Bible;
 use patina::Patina;
-use search::{SearchResult, search_by_reference};
 use std::env;
-use utils::kebob_to_title;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
