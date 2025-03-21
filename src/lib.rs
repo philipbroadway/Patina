@@ -3,7 +3,7 @@ pub mod search;
 mod utils;
 
 use bible::{Bible, BibleNumeric};
-use search::{SearchResult, search_by_reference};
+use search::{SearchResult, search_by_reference, search_by_text};
 // use utils::kebob_to_title;
 
 /// Struct to represent the Patina Bible search utility.
