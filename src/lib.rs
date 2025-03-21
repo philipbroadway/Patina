@@ -1,10 +1,10 @@
-mod bible;
-mod search;
+pub mod bible;
+pub mod search;
 mod utils;
 
 use bible::{Bible, BibleNumeric};
 use search::{SearchResult, search_by_reference};
-use utils::kebob_to_title;
+// use utils::kebob_to_title;
 
 /// Struct to represent the Patina Bible search utility.
 pub struct Patina {
