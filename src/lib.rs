@@ -20,6 +20,24 @@ impl Patina {
         }
     }
 
+    pub fn list_books(&self) -> Vec<String> {
+      self.bible.books.keys().cloned().collect()
+    }
+
+    pub fn list_chapters(&self, book: &str) -> Option<Vec<String>> {
+      self.bible.books.get(book).map(|b| {
+          b.chapters.keys().map(|&ch| ch.to_string()).collect()
+      })
+    }
+
+    pub fn list_verses(&self, book: &str, chapter: u32) -> Option<Vec<String>> {
+      self.bible.books.get(book).and_then(|b| {
+          b.chapters.get(&chapter).map(|c| {
+              c.verses.keys().map(|&v| v.to_string()).collect()
+          })
+      })
+    }
+
     /// Search by book, chapter, and verse.
     pub fn search_by_reference(
         &self,
