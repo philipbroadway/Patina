@@ -1,6 +1,6 @@
-use crate::bible::Bible;
+// use crate::bible::Bible;
 use crate::bible::{BibleNumeric, ChapterNumeric};
-use crate::utils::kebob_to_title;
+// use crate::utils::kebob_to_title;
 use std::collections::BTreeMap;
 
 pub enum SearchResult<'a> {
