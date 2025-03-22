@@ -3,8 +3,6 @@ pub mod search;
 mod utils;
 
 use bible::{Bible, BibleNumeric};
-use search::{SearchResult, search_by_reference};
-// use utils::kebob_to_title;
 
 /// Struct to represent the Patina Bible search utility.
 pub struct Patina {
@@ -29,9 +27,9 @@ impl Patina {
         chapter: Option<u32>,
         verse: Option<u32>,
     ) -> Option<String> {
-        match search_by_reference(&self.bible, book, chapter, verse) {
-            Some(SearchResult::Verse(text)) => Some(text.to_owned()),
-            Some(SearchResult::Chapter(ch)) => Some(format!(
+        match search::search_by_reference(&self.bible, book, chapter, verse) {
+            Some(search::SearchResult::Verse(text)) => Some(text.to_owned()),
+            Some(search::SearchResult::Chapter(ch)) => Some(format!(
                 "Chapter:\n{}",
                 ch.verses
                     .iter()
@@ -39,7 +37,7 @@ impl Patina {
                     .collect::<Vec<_>>()
                     .join("\n")
             )),
-            Some(SearchResult::Book(chapters)) => {
+            Some(search::SearchResult::Book(chapters)) => {
                 let out = chapters
                     .iter()
                     .map(|(ch_num, ch)| {
