@@ -21,7 +21,7 @@ impl Patina {
     }
 
     pub fn list_books(&self) -> Vec<String> {
-      self.bible.books.keys().cloned().collect()
+      self.bible.canonical_order()
     }
 
     pub fn list_chapters(&self, book: &str) -> Option<Vec<String>> {
