@@ -7,4 +7,4 @@ edition = "2024"
 actix-web = "4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-patina = { git = "https://github.com/philipbroadway/patina.git" }
+patina = { git = "https://github.com/philipbroadway/patina.git",  branch = "main" }
