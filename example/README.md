@@ -12,4 +12,5 @@ cargo run
 
 http://localhost:8080/john/3/18
 
-http://localhost:8080?q=romans+8:28
+http://localhost:8080
+
